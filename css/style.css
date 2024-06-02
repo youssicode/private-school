@@ -1,0 +1,727 @@
+/* :root {
+  --main-color: #74b9ff;
+  --sd-main-color: #fff;
+  --font-color: #0984e3;
+  --font-color2: #666;
+  --boxShad: #295c83ad;
+  --bg-color: #f9f9f9;
+  --bg-color2: #2d3436;
+} */
+::selection {
+  color: var(--sd-main-color);
+  background-color: var(--main-color);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/*! Nav-Bar */
+.nav-container {
+  /* The same as the .container to be aligned with it */
+  left: 3%;
+  right: 3%;
+  /* So the width will be 94% */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1285px;
+  /* ---An Other Way To Center The Nav-Container ------*/
+  /** width: 96%;
+  **  left: 50%;
+  **  transform: translate(-50%);
+  **  max-width: 1285px; */
+  /* ------------------ */
+  position: fixed;
+  top: 20px;
+  height: 50px;
+  padding-right: 25px;
+  padding-left: 25px;
+  background-color: var(--sd-main-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  z-index: 99;
+  box-shadow: var(--boxShad) 0 2px 5px;
+}
+
+.logo {
+  font-size: 20px;
+}
+
+.logo i {
+  color: var(--font-color);
+}
+
+.logo span {
+  color: var(--main-color);
+  margin-left: 10px;
+}
+
+nav ul {
+  padding: 6px 0;
+  margin-left: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 15px;
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--font-color);
+  font-size: 18px;
+}
+
+nav ul li:hover a {
+  color: var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+}
+
+/** ======== Start color palette ====== */
+nav .dropDown {
+  position: relative;
+}
+
+nav .dropDown:hover .themesBtn {
+  border-bottom: none;
+}
+
+nav .dropDown:hover .colorsLinks {
+  height: 146.88px;
+  cursor: pointer;
+}
+
+nav .colorsLinks {
+  position: absolute;
+  top: 100%;
+  width: 115px;
+  height: 0;
+  background-color: var(--font-color2);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: height 0.4s;
+}
+
+nav .colorsLinks div {
+  color: #fff;
+  font-size: 16px;
+  padding: 5px;
+  border-bottom: 1px solid black;
+}
+
+nav .colorsLinks div:hover {
+  color: black;
+}
+
+nav .colorsLinks div.blue {
+  background-color: #0984e3;
+}
+
+nav .colorsLinks div.orange {
+  background-color: #ffc107;
+}
+
+nav .colorsLinks div.green {
+  background-color: green;
+}
+
+nav .colorsLinks div.gray {
+  background-color: #808080;
+}
+
+nav .colorsLinks div.dark {
+  background-color: #000007;
+}
+
+nav .colorsLinks div.dark:hover {
+  color: gray;
+}
+
+/** ======== End color palette ====== */
+#toggle-check {
+  float: right;
+  visibility: hidden;
+}
+
+.nav-toggler {
+  width: 50px;
+  height: 47px;
+  float: right;
+  display: none;
+}
+
+/** Burger Button: Optional, We Can Replace it With An Icon For Example */
+.nav-toggler span {
+  width: 35px;
+  height: 4px;
+  background-color: var(--font-color);
+  border-radius: 3px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.nav-toggler span::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--font-color);
+  transition: all 0.3s;
+}
+
+.nav-toggler span::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--font-color);
+  transition: all 0.3s;
+}
+
+/*! END NAV-BAR */
+section {
+  min-height: 100vh;
+  padding: 100px 0 25px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home {
+  background-color: var(--main-color);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 120px;
+}
+
+.container {
+  width: 94%;
+  max-width: 1285px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#home::after {
+  content: "";
+  position: absolute;
+  top: 70%;
+  left: -15%;
+  background-color: var(--sd-main-color);
+  width: 130%;
+  height: 70%;
+  border-radius: 50%;
+}
+
+#home h1 {
+  font-size: 5rem;
+  color: var(--sd-main-color);
+  font-weight: 700;
+  text-shadow: var(--font-color) 0 2px 5px;
+  margin-bottom: 0;
+}
+
+#home p.intro {
+  font-size: 2rem;
+  color: var(--sd-main-color);
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 15px 0;
+}
+
+.home-btn {
+  background-color: var(--font-color);
+  width: 200px;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 20px;
+  color: var(--sd-main-color);
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 90px;
+  cursor: pointer;
+  box-shadow: 3px 3px 7px var(--font-color);
+}
+
+.crsCard-container,
+.home-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.crsCard,
+.card {
+  width: 250px;
+  height: 200px;
+  background-color: var(--sd-main-color);
+  border-radius: 10px;
+  margin: 20px;
+  padding: 15px;
+  z-index: 55;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 30%);
+}
+
+.card:hover div {
+  background-color: var(--font-color);
+}
+
+.card:hover h4 {
+  color: var(--main-color);
+}
+
+.card div {
+  background-color: var(--main-color);
+  font-size: 32px;
+  color: var(--sd-main-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+h4 {
+  color: var(--font-color);
+  font-size: 20px;
+  letter-spacing: 1.3px;
+}
+
+.card p,
+.revCard p {
+  color: var(--font-color2);
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+/************ About Section **************/
+#about,
+#course,
+footer {
+  background-color: var(--sd-main-color);
+}
+
+header {
+  margin-bottom: 25px;
+}
+
+.sec-heading {
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--font-color);
+  margin-bottom: 10px;
+}
+
+.header-title {
+  font-size: 22px;
+  color: var(--font-color2);
+  line-height: 1.5;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row .description,
+.row .svg {
+  width: 46%;
+  text-align: left;
+}
+
+/* .row .svg img {
+  fill: yellow;
+  stroke: red;
+} */
+.description h3 {
+  font-size: 30px;
+  color: var(--font-color);
+  line-height: 1.2;
+}
+
+.crsCard p,
+.description p {
+  font-size: 16px;
+  line-height: 1.3;
+  color: var(--font-color2);
+  padding: 15px 0;
+}
+
+.desc-btn,
+form #sbmt {
+  background-color: var(--font-color);
+  width: 170px;
+  height: 38px;
+  line-height: 38px;
+  border-radius: 20px;
+  color: var(--sd-main-color);
+  font-size: 19px;
+  box-shadow: var(--font-color2) 2px 2px 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.desc-btn:hover,
+.home-btn:hover {
+  letter-spacing: 1.3px;
+}
+
+/****** Teachers Section **** */
+#teachers,
+#review {
+  background-color: var(--bg-color);
+}
+
+.teacher-cards,
+.revCards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tCard,
+.revCard {
+  margin: 20px;
+  background-color: var(--sd-main-color);
+  box-shadow: 0 2px 5px rgb(0 0 0 / 30%);
+}
+
+.tPhoto {
+  width: 240px;
+  height: 300px;
+  margin: 20px;
+}
+
+.tPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: 0.2s;
+}
+
+.tPhoto img:hover {
+  filter: none;
+}
+
+.quote {
+  color: var(--font-color2);
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.tSocial i {
+  color: var(--font-color);
+  font-size: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.tSocial i:hover {
+  color: var(--main-color);
+  transform: scale(1.3);
+}
+
+/************ Course Section */
+.crsCard {
+  box-shadow: 5px 5px 0px var(--font-color);
+  background-color: var(--bg-color);
+  margin-top: 50px;
+}
+
+.crsCard div {
+  color: var(--bg-color);
+  font-size: 3.5rem;
+  background-color: var(--font-color);
+  display: grid;
+  place-items: center;
+  margin-top: -33%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px inset var(--bg-color);
+  border: 10px solid var(--bg-color);
+  border-left: 10px solid var(--font-color);
+  border-right: 10px solid var(--font-color);
+}
+
+/******* Review Section  *******/
+#review header {
+  margin-bottom: 60px;
+}
+
+.revCard {
+  position: relative;
+  width: 300px;
+  padding: 32px;
+  padding-top: 50px;
+  padding-bottom: 15px;
+  margin-top: 85px;
+  margin-bottom: 50px;
+}
+
+.revCard img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  position: absolute;
+  left: 50%;
+  /* Not important, because it's already centered by text-align:center */
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border-left: 8px solid var(--font-color);
+  border-right: 8px solid var(--main-color);
+  border-bottom: 8px solid var(--font-color);
+  border-top: 8px solid var(--main-color);
+}
+
+.revCard h4 {
+  padding: 5px;
+}
+
+.stars {
+  padding: 10px;
+  color: var(--font-color);
+  font-size: 16px;
+}
+
+.stars i {
+  cursor: pointer;
+}
+
+/*********** Contact Section  ******/
+.errorSpan {
+  padding: 10px;
+  background-color: #edd71b;
+  color: red;
+  font-size: 14px;
+  border-radius: 10px;
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  z-index: 99;
+}
+
+#contact {
+  background: var(--bg-color2);
+}
+
+#contact .header-title {
+  color: var(--bg-color);
+}
+
+.input-group div {
+  position: relative;
+}
+
+.input-group input,
+textarea {
+  resize: vertical;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: var(--font-color2);
+  background-color: var(--sd-main-color);
+  padding-left: 15px;
+  border-radius: 20px;
+  border: none;
+}
+
+textarea {
+  height: calc(7vw + 50px);
+  min-height: 120px;
+  border-radius: 10px;
+  padding-top: 15px;
+}
+
+form #sbmt {
+  box-shadow: none;
+}
+
+form #sbmt:hover {
+  background-color: var(--bg-color2);
+  color: var(--bg-color);
+  border: 2px solid var(--font-color);
+  line-height: 34px;
+}
+
+.input-group input:focus,
+textarea:focus {
+  outline: 3px solid var(--font-color);
+}
+
+.social-icons {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  border-bottom: 1px solid var(--font-color2);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer p {
+  padding: 10px;
+  margin-bottom: 19px;
+  text-align: center;
+  font-size: 20px;
+  color: var(--font-color2);
+}
+
+footer p span {
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 20px;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 38px;
+  color: var(--main-color);
+  margin-left: 5px;
+}
+
+.social-icons a:hover {
+  background-color: var(--font-color);
+  color: var(--sd-main-color);
+  border-color: var(--font-color);
+}
+
+@media screen and (max-width: 769px) {
+  html {
+    font-size: 55%;
+  }
+
+  #home::after {
+    display: none;
+  }
+
+  #home p.intro {
+    margin: 0;
+  }
+
+  /** Nav-Bar */
+  .nav-toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav {
+    position: absolute;
+    right: 0;
+    top: 55px;
+    width: 35%;
+    min-width: 220px;
+    background-color: var(--font-color);
+    border-radius: 15px;
+    display: none;
+    text-align: start;
+  }
+
+  nav ul li {
+    display: block;
+    padding: 12px;
+  }
+
+  nav ul li a:hover {
+    color: var(--main-color);
+    margin-left: 15px;
+  }
+
+  nav ul li a {
+    color: var(--sd-main-color);
+    transition: margin-left 0.5s;
+  }
+
+  #toggle-check:checked~nav {
+    display: initial;
+    /* Or : Block; */
+  }
+
+  /** Burger Button Become a X  (OPTIONAL) */
+  #toggle-check:checked~.nav-toggler span {
+    background-color: transparent;
+  }
+
+  #toggle-check:checked~.nav-toggler span::after {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  #toggle-check:checked~.nav-toggler span::before {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /** End Nav-Bar */
+  .card {
+    width: 220px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .row .description,
+  .row .svg {
+    width: 85%;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    order: 2;
+  }
+
+  .svg {
+    order: 1;
+    max-width: 425px;
+  }
+
+  .description h3 {
+    font-size: 25px;
+  }
+
+  form #sbmt {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+}
